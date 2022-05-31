@@ -1,14 +1,16 @@
-const num = 266219;
+'use strict';
+const str = '      qwertyuiopasdfghjklzxcvbnmqwertyuuipasd    ';
+const num = 44;
 
-let array = ("" + num).split("").map(Number);
-const multiplyNum = array.reduce((multiply, index) => multiply * index);
-console.log(multiplyNum);
+const func = function (a) {
+    if ((typeof a) == 'string') {
+        let b = 30;
+        a = a.replace(/^ +| +$/g, '');
+        return a.substr(0, b) + '...';
+    } else {
+        return 'Аргумент функции не строка';
+    }
+};
 
-const cube = multiplyNum ** 3;
-console.log(cube);
-
-let twoSymbol = String(cube);
-let twoNumber = twoSymbol[0] + twoSymbol[1];
-let num2 = Number(twoNumber);
-
-console.log(num2);
+console.log(func(str));
+console.log(func(num));
